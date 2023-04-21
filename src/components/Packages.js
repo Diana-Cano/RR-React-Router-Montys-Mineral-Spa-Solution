@@ -1,18 +1,20 @@
-
+import ListGroup from 'react-bootstrap/ListGroup'
+import Card from 'react-bootstrap/Card'
+import Container from 'react-bootstrap/Container'
 
 export default function Packages(props) {
-    const displayPackages = props.packages.map((eachPackage) => <li>{eachPackage}</li>)
+    const displayPackages = props.packages.map((eachPackage) => <ListGroup.Item style={{fontSize: "18px"}} action>{eachPackage}</ListGroup.Item>)
 
     return (
-        <div>
-            <div className="packages">
-                <div className="packagesHeader">
+        <Container>
+            <Card>
+                <Card.Header>
                     <h1>Our Packages</h1>
-                </div>
-                <ul>
+                </Card.Header>
+                <ListGroup>
                     {displayPackages}
-                </ul>
-            </div>
-        </div>
+                </ListGroup>
+            </Card>
+        </Container>
     )
 }
